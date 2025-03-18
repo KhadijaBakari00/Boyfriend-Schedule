@@ -14,7 +14,7 @@ const schedules = {
   tuesday: [
     "⏰ 07:00 – Wake up",
     "🍳 07:30 – Breakfast",
-    "🏋️ 08:00–08:45 – Workout (or just a walk",
+    "🏋️ 08:00–08:45 – Workout (or just a walk)",
     "🍱 12:30 – Lunch",
     "🍲 18:00 – Dinner",
     "🍎 21:00 – Light snack",
