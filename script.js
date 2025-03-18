@@ -1,58 +1,63 @@
 const scheduleDisplay = document.getElementById("schedule-display");
 const dayButtons = document.querySelectorAll(".day-button");
 
-// Updated schedules
+
 const schedules = {
   monday: [
     "🍳 08:30 – Breakfast (before workout)",
-    "🏋️ 09:00–09:45 – Workout",
+    "🏋 09:00–09:45 – Workout",
     "🍱 12:30 – Lunch (before work)",
     "🍎 18:00 – Snack at work",
-    "🍲 00:00 – Light dinner (after work, not too heavy before bed)",
-    "🛌 00:30–08:30 – Sleep",
+    "🍲 00:30 – Light dinner (after work, not too heavy before bed)",
+    "🛌 01:00–07:00 – Sleep",
   ],
   tuesday: [
-    "🍳 08:30 – Breakfast",
-    "🏋️ 09:00–09:45 – Workout (or just a walk :)",
+    "⏰ 07:00 – Wake up",
+    "🍳 07:30 – Breakfast",
+    "🏋 08:00–08:45 – Workout",
     "🍱 12:30 – Lunch",
     "🍲 18:00 – Dinner",
     "🍎 21:00 – Light snack",
-    "🛌 00:30–08:30 – Sleep",
+    "🛌 22:30–05:30 – Sleep (to adjust for Wednesday’s early shift)",
   ],
   wednesday: [
-    "🍳 05:30 – Breakfast (before work)",
+    "⏰ 05:30 – Wake up + Breakfast",
     "🍱 12:00 – Lunch (during work break)",
-    "🏋️ 16:00–16:45 – Workout (after work)",
+    "🏋 16:30–17:15 – Workout (after getting home)",
     "🍲 19:30 – Dinner",
-    "🛌 22:00–05:30 – Sleep",
+    "🛌 22:30–06:30 – Sleep",
   ],
   thursday: [
-    "🍳 07:30 – Breakfast",
-    "🏋️ 08:00–08:45 – Workout",
+    "⏰ 06:30 – Wake up",
+    "🍳 07:00 – Breakfast",
+    "🏋 08:00–08:45 – Workout",
     "🍎 09:30 – Light snack (before work)",
     "🍱 14:00 – Lunch (during work break)",
-    "🍲 19:30 – Dinner",
-    "🛌 23:30–07:30 – Sleep",
+    "🍲 19:30 – Dinner (after getting home)",
+    "🛌 00:30–08:30 – Sleep",
   ],
   friday: [
-    "🍳 15:30 – Light breakfast (after waking up)",
-    "🏋️ 16:00–16:45 – Workout",
+    "⏰ 08:30 – Wake up",
+    "🍳 09:00 – Breakfast",
+    "🏋 12:30–13:15 – Workout",
+    "🛌 15:30 – Nap (to prepare for night shift)",
     "🍲 20:30 – Dinner (before work)",
     "🍎 00:00 – Snack at work",
-    "🛌 07:00–15:00 – Sleep",
+    "🛌 07:30–15:30 – Sleep",
   ],
   saturday: [
-    "🍳 15:30 – Light breakfast (after waking up)",
-    "🏋️ 16:00–16:45 – Workout",
+    "⏰ 15:30 – Wake up + Breakfast",
+    "🏋 16:00–16:45 – Workout",
     "🍲 20:30 – Dinner (before work)",
     "🍎 00:00 – Snack at work",
-    "🛌 07:00–15:00 – Sleep",
+    "🛌 07:30–15:30 – Sleep",
   ],
   sunday: [
-    "🍱 12:30 – Lunch (before work)",
+    "🍳 11:30 – Breakfast (before work)",
+    "🍱 13:00 – Lunch (before work)",
     "🍎 18:00 – Snack at work",
-    "🍲 23:30 – Light dinner (after work)",
-    "🛌 00:30–07:00 – Sleep",
+    "🍲 00:00 – Light dinner (after work)",
+    "🛌 00:30–07:30 – Sleep",
   ],
 };
 
@@ -64,7 +69,7 @@ dayButtons.forEach((button) => {
     scheduleDisplay.innerHTML = `
       <h2>${day.charAt(0).toUpperCase() + day.slice(1)}</h2>
       <ul>
-        ${schedule.map((item) => `<li>${item}</li>`).join("")}
+        ${schedule.map((item) => <li>${item}</li>).join("")}
       </ul>
     `;
   });
