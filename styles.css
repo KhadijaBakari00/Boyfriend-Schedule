@@ -1,0 +1,203 @@
+/* General Styles */
+body {
+  font-family: 'Press Start 2P', cursive; /* Pixel art font */
+  background: url('pixel-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-height: 100vh; /* Ensure the background covers the full height */
+}
+
+header {
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  padding: 20px;
+  border-bottom: 5px solid #ff6f61;
+  position: relative; /* For positioning the heart GIF */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffd700; /* Gold color for retro vibe */
+  text-shadow: 3px 3px #8b0000; /* Dark red shadow for depth */
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+.pixel-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: auto;
+  animation: float 3s infinite ease-in-out;
+}
+
+.game-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.day-button {
+  background: #ff6f61;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px #000;
+  font-family: 'Press Start 2P', cursive; /* Pixel font for buttons */
+}
+
+.day-button:hover {
+  background: #ff4757;
+  transform: scale(1.1);
+}
+
+.schedule-display {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+.schedule-display h2 {
+  font-family: 'Press Start 2P', cursive; /* Pixel font for headers */
+  font-size: 1.5rem;
+  color: #ff6f61; /* Retro pink */
+  text-shadow: 2px 2px #8b0000; /* Dark red shadow */
+}
+
+.schedule-display ul {
+  list-style: none;
+  padding: 0;
+}
+
+.schedule-display li {
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Arial', sans-serif; /* Non-pixel font for readability */
+}
+
+.schedule-display li::before {
+  content: "🍴";
+  font-size: 1.2rem;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.8rem;
+  text-shadow: 2px 2px #000;
+}
+
+.pixel-bunny {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 100px;
+  height: auto;
+  animation: bounce 2s infinite;
+}
+
+.pixel-cat {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+  animation: float 3s infinite ease-in-out;
+}
+
+.pixel-dog {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+  width: 100px;
+  height: auto;
+  animation: float 4s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  header p {
+    font-size: 0.8rem; /* Smaller font size for mobile */
+  }
+
+  .day-button {
+    font-size: 0.8rem; /* Smaller buttons for mobile */
+    padding: 8px 16px;
+  }
+
+  .schedule-display {
+    width: 90%; /* Wider schedule display for mobile */
+    padding: 10px;
+  }
+
+  .schedule-display h2 {
+    font-size: 1.2rem; /* Smaller header for mobile */
+  }
+
+  .schedule-display li {
+    font-size: 0.9rem; /* Smaller text for mobile */
+  }
+
+  .pixel-bunny,
+  .pixel-cat,
+  .pixel-dog {
+    width: 80px; /* Smaller GIFs for mobile */
+  }
+
+  .pixel-heart {
+    width: 40px; /* Smaller heart for mobile */
+  }
+}
