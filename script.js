@@ -14,7 +14,7 @@ const schedules = {
   tuesday: [
     "⏰ 07:00 – Wake up",
     "🍳 07:30 – Breakfast",
-    "🏋️ 08:00–08:45 – Workout/or just a wal :)",
+    "🏋️ 08:00–08:45 – Workout/or just a walk :)",
     "🍱 12:30 – Lunch",
     "🍲 18:00 – Dinner",
     "🍎 21:00 – Light snack",
@@ -84,8 +84,10 @@ dayButtons.forEach((button) => {
   });
 });
 
-// Function to show a popup message
+// Function to show a custom modal
 function showPopup(activity) {
+  const modal = document.getElementById("custom-modal");
+  const modalMessage = document.getElementById("modal-message");
   let message = "";
 
   // Custom messages based on the activity
@@ -99,8 +101,22 @@ function showPopup(activity) {
     message = `I assume it's time for you to ${activity.toLowerCase()}. You've got this! 💖`;
   }
 
-  // Display the popup
-  alert(message); // You can replace this with a custom modal later
+  // Set the message and show the modal
+  modalMessage.textContent = message;
+  modal.style.display = "flex"; // Show the modal
+
+  // Close the modal when the close button is clicked
+  const closeModal = document.getElementById("close-modal");
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none"; // Hide the modal
+  });
+
+  // Close the modal when clicking outside the modal
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none"; // Hide the modal
+    }
+  });
 }
 
 // Reminder Notifications
