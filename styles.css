@@ -100,6 +100,14 @@ header p {
   align-items: center;
   gap: 10px;
   font-family: 'Arial', sans-serif; /* Non-pixel font for readability */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.schedule-display li:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  background: #ff6f61; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
 }
 
 .schedule-display li::before {
@@ -160,6 +168,66 @@ footer {
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* Custom Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  z-index: 1000; /* Ensure it's on top */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #ff6f61; /* Retro pink background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  width: 90%;
+  animation: slideIn 0.3s ease-out; /* Animation */
+}
+
+#modal-message {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+#close-modal {
+  background: #ff4757;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#close-modal:hover {
+  background: #ff6f61;
+}
+
+/* Animation for modal */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
