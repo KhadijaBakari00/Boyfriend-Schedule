@@ -14,7 +14,7 @@ const schedules = {
   tuesday: [
     "⏰ 07:00 – Wake up",
     "🍳 07:30 – Breakfast",
-    "🏋️ 08:00–08:45 – Workout (or just a walk)",
+    "🏋️ 08:00–08:45 – Workout/or just a wal :)",
     "🍱 12:30 – Lunch",
     "🍲 18:00 – Dinner",
     "🍎 21:00 – Light snack",
@@ -72,8 +72,36 @@ dayButtons.forEach((button) => {
         ${schedule.map((item) => `<li>${item}</li>`).join("")}
       </ul>
     `;
+
+    // Add click event listeners to each list item
+    const listItems = scheduleDisplay.querySelectorAll("li");
+    listItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const activity = item.textContent.split(" – ")[1]; // Extract the activity
+        showPopup(activity); // Show the popup with a custom message
+      });
+    });
   });
 });
+
+// Function to show a popup message
+function showPopup(activity) {
+  let message = "";
+
+  // Custom messages based on the activity
+  if (activity.includes("Workout")) {
+    message = "Never back down, never what? Good luck bubu! 💪";
+  } else if (activity.includes("Breakfast") || activity.includes("Lunch") || activity.includes("Dinner")) {
+    message = `I assume it's time for you to ${activity.toLowerCase()}. I love you, my beef jerky, and I believe in you! ❤️`;
+  } else if (activity.includes("Sleep")) {
+    message = "Time to rest, bubu. Sweet dreams! 😴";
+  } else {
+    message = `I assume it's time for you to ${activity.toLowerCase()}. You've got this! 💖`;
+  }
+
+  // Display the popup
+  alert(message); // You can replace this with a custom modal later
+}
 
 // Reminder Notifications
 if ("Notification" in window) {
