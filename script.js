@@ -94,7 +94,7 @@ function showPopup(activity) {
   if (activity.includes("Workout")) {
     message = "Never back down, never what? Good luck bubu! 💪";
   } else if (activity.includes("Breakfast") || activity.includes("Lunch") || activity.includes("Dinner")) {
-    message = "Go eat my Roro patootie, and don’t forget to drink water instead! 💖";
+    message = "Go eat my Roro patootie, and don’t forget to drink water as wellll! 💖";
   } else if (activity.includes("Sleep")) {
     message = "Time to rest, bubu. Sweet dreams! 😴";
   } else {
