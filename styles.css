@@ -249,6 +249,9 @@ footer {
   .schedule-display {
     width: 90%; /* Wider schedule display for mobile */
     padding: 10px;
+    max-height: 50vh; /* Limit height to 50% of the viewport */
+    overflow-y: auto; /* Make it scrollable */
+    margin-bottom: 80px; /* Add space for the footer */
   }
 
   .schedule-display h2 {
@@ -267,5 +270,9 @@ footer {
 
   .pixel-heart {
     width: 40px; /* Smaller heart for mobile */
+  }
+
+  footer {
+    font-size: 0.7rem; /* Smaller footer text for mobile */
   }
 }
