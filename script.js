@@ -8,56 +8,54 @@ const schedules = {
     "🏋️ 09:00–09:45 – Workout",
     "🍱 12:30 – Lunch (before work)",
     "🍎 18:00 – Snack at work",
-    "🍲 00:30 – Light dinner (after work, not too heavy before bed)",
-    "🛌 01:00–07:00 – Sleep",
-  ],
-  tuesday: [
-    "⏰ 07:00 – Wake up",
-    "🍳 07:30 – Breakfast",
-    "🏋️ 08:00–08:45 – Workout/or just a walk :)",
-    "🍱 12:30 – Lunch",
-    "🍲 18:00 – Dinner",
-    "🍎 21:00 – Light snack",
-    "🛌 22:30–05:30 – Sleep",
-  ],
-  wednesday: [
-    "⏰ 05:30 – Wake up + Breakfast",
-    "🍱 12:00 – Lunch (during work break)",
-    "🏋️ 16:30–17:15 – Workout (after getting home)",
-    "🍲 19:30 – Dinner",
-    "🛌 22:30–06:30 – Sleep",
-  ],
-  thursday: [
-    "⏰ 06:30 – Wake up",
-    "🍳 07:00 – Breakfast",
-    "🏋️ 08:00–08:45 – Workout",
-    "🍎 09:30 – Light snack (before work)",
-    "🍱 14:00 – Lunch (during work break)",
-    "🍲 19:30 – Dinner (after getting home)",
+    "🍲 00:00 – Light dinner (after work, not too heavy before bed)",
     "🛌 00:30–08:30 – Sleep",
   ],
-  friday: [
-    "⏰ 08:30 – Wake up",
-    "🍳 09:00 – Breakfast",
+  tuesday: [
+    "⏰ 08:30 – Wake up + Breakfast",
+    "🏋️ 09:30–10:15 – Workout/ or just a walk:)",
+    "🍱 13:00 – Lunch",
+    "🍲 18:30 – Dinner",
+    "🍎 21:00 – Light snack",
+    "🛌 00:30–08:30 – Sleep",
+  ],
+  wednesday: [
+    "🍳 08:30 – Breakfast (before workout)",
+    "🏋️ 09:00–09:45 – Workout",
+    "🍱 12:30 – Lunch (before work)",
+    "🍎 18:00 – Snack at work",
+    "🍲 00:00 – Light dinner (after work)",
+    "🛌 00:30–08:30 – Sleep",
+  ],
+  thursday: [
+    "⏰ 08:30 – Wake up + Breakfast",
     "🏋️ 12:30–13:15 – Workout",
-    "🛌 15:30 – Nap (to prepare for night shift)",
+    "🍱 14:00 – Lunch",
+    "🛌 16:00–19:30 – Nap (to adjust for night shift)",
     "🍲 20:30 – Dinner (before work)",
     "🍎 00:00 – Snack at work",
-    "🛌 07:30–15:30 – Sleep",
+    "🛌 07:00–15:00 – Sleep",
   ],
-  saturday: [
-    "⏰ 15:30 – Wake up + Breakfast",
+  friday: [
+    "⏰ 15:00 – Wake up + Breakfast",
     "🏋️ 16:00–16:45 – Workout",
     "🍲 20:30 – Dinner (before work)",
     "🍎 00:00 – Snack at work",
-    "🛌 07:30–15:30 – Sleep",
+    "🛌 07:00–15:00 – Sleep",
+  ],
+  saturday: [
+    "⏰ 15:00 – Wake up + Breakfast",
+    "🏋️ 16:00–16:45 – Workout",
+    "🍲 20:30 – Dinner (before work)",
+    "🍎 00:00 – Snack at work",
+    "🛌 07:00–15:00 – Sleep",
   ],
   sunday: [
-    "🍳 11:30 – Breakfast (before work)",
-    "🍱 13:00 – Lunch (before work)",
-    "🍎 18:00 – Snack at work",
-    "🍲 00:00 – Light dinner (after work)",
-    "🛌 00:30–07:30 – Sleep",
+    "⏰ 15:00 – Wake up + Breakfast",
+    "🏋️ 16:00–16:45 – Workout",
+    "🍲 19:30 – Dinner",
+    "🍎 22:30 – Light snack",
+    "🛌 01:00–09:00 – Sleep",
   ],
 };
 
@@ -94,9 +92,11 @@ function showPopup(activity) {
   if (activity.includes("Workout")) {
     message = "Never back down, never what? Good luck bubu! 💪";
   } else if (activity.includes("Breakfast") || activity.includes("Lunch") || activity.includes("Dinner")) {
-    message = "Go eat my Roro patootie, and don’t forget to drink water as wellll! 💖";
+    message = "Go eat my Roro patootie, and don’t forget to drink water as wellllll! 💖";
   } else if (activity.includes("Sleep")) {
     message = "Time to rest, bubu. Sweet dreams! 😴";
+  } else if (activity.includes("Nap")) {
+    message = "Take a nap, bubu. You deserve it! 😴";
   } else {
     message = `I assume it's time for you to ${activity.toLowerCase()}. You've got this! 💖`;
   }
